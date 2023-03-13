@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFrameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/layoutNormal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-3dp">
+
+            <!-- Top banner-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bannerHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/pisello"
+                android:padding="10dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/textName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/text_banner_home_hello"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="@dimen/textsize_TitleLogin" />
+
+                    <TextView
+                        android:id="@+id/fragmentHomeUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/marginStart_location_home"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="@dimen/textsize_TitleLogin" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Body home -->
+            <LinearLayout
+                android:id="@+id/bodyHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:weightSum="9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bannerHome">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/pisello"
+                    android:paddingHorizontal="30dp"
+                    android:paddingBottom="20dp"
+                    android:text="Seleziona una data in cui vuoi prenotare"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="22sp" />
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/buttonPrenota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Avanti"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:text="Attendi di essere accettato per poter prenotare. Quando sai di essere stato accettato ricarica la pagina"
+                    android:textSize="20sp" />
+
+
+                <ImageButton
+                    android:id="@+id/imageButtonRicarica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/icn_refresh"
+                    android:contentDescription="bottone per ricaricare i dati dell'utente"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/reviewCardRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/versionToUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="30dp"
+                android:gravity="center"
+                android:text="Aggiorna la versione dell'applicazione dal menù in alto a sinistra"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

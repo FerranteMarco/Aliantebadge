@@ -1,0 +1,346 @@
+<resources>
+    <string name="app_name">Aliante Badge</string>
+
+    <!-- Strings related to Splash Screen -->
+    <string name="image_description_splash">logo dello splash screen</string>
+
+    <!-- Strings related to navHome -->
+    <string name="nav_profile">Profilo</string>
+    <string name="nav_favourite">Preferiti</string>
+    <string name="nav_change_password">Cambia password</string>
+    <string name="nav_edit_profile">Modifica profilo</string>
+    <string name="nav_download">Scaricati</string>
+    <string name="nav_settings">Impostazioni</string>
+
+
+    <!-- Strings related to login and register -->
+    <string name="text_login">Accedi</string>
+    <string name="text_register">Registrati</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="link_forget_password"><u>Password dimenticata?</u></string>
+    <string name="text_not_register">Non hai un account?</string>
+    <string name="link_register"><u>Registrati</u></string>
+    <string name="text_or">oppure</string>
+    <string name="link_login_ghost"><u>Accedi come ospite</u></string>
+    <string name="helper_input_password">Inserisci una password che contenga <b>almeno 8 caratteri, un numero e un carattere speciale.</b></string>
+
+    <string name="hint_repeat_password">Conferma password</string>
+    <string name="image_description_back_arrow">Indietro</string>
+    <string name="image_description_logo_header">Banner del logo</string>
+
+    <string name="insert_email_error">Inserisci una email</string>
+    <string name="email_format_error">Formato email non valido</string>
+    <string name="insert_password_error">Inserisci una password</string>
+    <string name="password_not_safe_error">La password non incontra i requisiti di sicurezza</string>
+    <string name="insert_repeat_password_error">Inserisci di nuovo la passoword</string>
+    <string name="non_equivalent_passwords">Le password non coincidono</string>
+    <string name="wrong_password_error">Password errata</string>
+
+    <string name="perfect">PERFETTO!</string>
+    <string name="successfully_registered">Sei stato registrato/a!</string>
+    <string name="successfully_sent_reset_password">Email di reset password inviata!\nSe non la trovi tra la mail in arrivo controlla nello spam</string>
+    <string name="pay_attention">ATTENZIONE!</string>
+    <string name="an_error_occurred">C\'è stato un errore!</string>
+    <string name="error_sending_reset_password">Errore, email non inviata!</string>
+
+
+    <!-- Strings related to feedback register -->
+    <string name="description_image_face">Immagine del feedback</string>
+    <string name="text_title_feedback">Sei dei nostri!</string>
+    <string name="text_feedback">Grazie per aver scaricato l\'app</string>
+    <string name="text_goto_tutorial">vai al tutorial</string>
+
+
+    <!-- Strings related to onboard -->
+    <string name="image_description_tutorial">Immagine tutorial</string>
+    <string name="viewPager_description">Scorri per visualizzare il tutorial</string>
+    <string name="text_skip">Salta</string>
+    <string name="text_next">Avanti</string>
+    <string name="text_start">Inizio</string>
+    <string name="text_start_female">Inizia</string>
+    <string name="text_continue">Continua</string>
+    <string name="text_title_tutorial">Titolo</string>
+    <string name="text_title_search_itinerary">Cerca l\'itinerario più adatto a te</string>
+    <string name="text_title_augmented_reality">Realtà Aumentata</string>
+    <string name="text_title_qr_code">QR-Code</string>
+    <string name="text_title_geolocalization">Geolocalizzati</string>
+    <string name="text_description_tutorial">Descrizione</string>
+    <string name="text_description_search_itinerary">Lasciati ispirare da numerosi itinerari creati da <b>guide turistiche</b> ed <b>esperti d’arte</b>. Consulta i servizi offerti e le modalità di <b>intrattenimento</b>. Cerca subito l’itinerario che preferisci.</string>
+    <string name="text_description_augmented_reality">Inquadrando, con il tuo smartphone, lo <b>spazio</b> che ti <b>circonda</b>, avrai la possibilità di visualizzare <b>più informazioni</b> rispetto a quelle disponibili nel posto in cui ti trovi.</string>
+    <string name="text_description_qr_code">Lungo il tuo tragitto potrai trovare questa icona. <b>Inquadrala</b> con la <b>fotocamera</b> e scopri di più rispetto alla tappa a cui fa riferimento.</string>
+    <string name="text_description_geolocalization">Attiva la geolocalizzazione per vedere gli <b>itinerari vicini a te</b>.</string>
+
+    <!-- Strings related to App Bar  Home-->
+    <string name="item_search">Ricerca</string>
+
+
+    <!-- Strings related to Bar Edit Profile  -->
+    <string name="item_edit">Modifica</string>
+
+
+    <!-- Strings related to Bottom Bar  -->
+    <string name="bottom_bar_text_home">Home</string>
+    <string name="bottom_bar_text_favourite">Preferiti</string>
+    <string name="bottom_bar_text_profile">Profilo</string>
+
+
+    <!-- Strings related to Hamburger Menu  -->
+    <string name="guest">Ospite</string>
+    <string name="hamburger_menu_text_podium">Classifica</string>
+    <string name="hamburger_menu_text_download">Scaricati</string>
+    <string name="hamburger_menu_text_tutorial">Tutorial</string>
+    <string name="hamburger_menu_text_settings">Impostazioni</string>
+    <string name="hamburger_menu_text_about_us">Chi siamo</string>
+    <string name="hamburger_menu_text_sign_out">Esci</string>
+    <string name="hamburger_menu_text_sign_in">Accedi</string>
+
+
+    <!-- Strings related to Forgot Password -->
+    <string name="text_forgot_password">Recupero Password</string>
+    <string name="text_guide_forgot_password">Inserisci la tua email per effettuare il\n recupero password</string>
+    <string name="text_send">invia</string>
+
+
+    <!-- Strings related to Profile Page  -->
+    <string name="title_Page_Profile">Profilo</string>
+    <string name="text_description_profile_icon">Immagine del profilo</string>
+    <string name="title_information_section">Informazioni sul profilo</string>
+    <string name="label_name">Nome</string>
+    <string name="label_username">Nome utente</string>
+    <string name="label_email">Email</string>
+    <string name="label_changepassword">Cambia password</string>
+    <string name="label_score">Score</string>
+    <string name="label_surname">Cognome</string>
+    <string name="label_item_badge">I miei badge</string>
+    <string name="text_change_profile">Modifica</string>
+    <string name="text_save_changes">Salva</string>
+    <string name="title_edit_profile">Modifica Profilo</string>
+    <string name="image_description_go_to_badge">vai alla sezione dei badge</string>
+    <string name="image_description_go_to_forgot_pass">vai alla sezione per cambiare password</string>
+
+
+    <!-- Strings related to Edit Profile Page  -->
+    <string name="text_change_image_profile">Cambia le informazioni del profilo</string>
+    <string name="request_camera_dialog">Abbiamo bisogno di accedere alla fotocamera per poter usufruire di alcune nostre funzionalità.</string>
+    <string name="request_gallery_dialog">Abbiamo bisogno di accedere alla galleria per poter usufruire di alcune nostre funzionalità.</string>
+
+    <!-- Strings related to Choose photo  -->
+    <string name="image_description_delete">cancella immagina profilo</string>
+    <string name="text_gallery">Galleria</string>
+    <string name="text_take_photos">Scatta\n Foto</string>
+
+    <!-- Strings related to Profile Page Ghost User  -->
+    <string name="text_title_ops">Ops!</string>
+    <string name="text_profile_ghost">Non fai ancora parte della nostra Community</string>
+    <string name="link_accedi"><u>Accedi</u></string>
+
+    <string name="description_no_download_itinerary">Non hai ancora scaricato itinerari. Prova a fare tap sull’icona dedicata</string>
+
+    <!-- Strings related to Change Password Page  -->
+    <string name="data_successfully_changed">I dati sono stati aggiornati con successo!</string>
+
+    <!-- Strings related to Settings Page  -->
+    <string name="title_select_lang">Lingua</string>
+    <!--enter the order of the set languages in  LanguageCode.java starting by position 0-->
+    <string name="lang_ita">Italiano</string>
+    <string name="lang_ing">Inglese</string>
+
+    <string-array name="options_array">
+        <item>Lingua</item>
+
+    </string-array>
+
+    <string name="nav_language"> Lingua </string>
+
+
+    <!-- Strings related to Change Password Page  -->
+    <string name="text_changepassword">Modifica Password</string>
+    <string name="hint_old_password">Password attuale </string>
+    <string name="hint_new_password">Nuova Password</string>
+    <string name="hint_confirm_new_password">Conferma la nuova password</string>
+    <string name="text_changepassword_button">Modifica</string>
+    <string name="password_successfully_changed">Password correttamente aggiornata!</string>
+    <string name="error_changing_password">Errore interno, password non aggiornata!</string>
+
+    <!-- Strings related to Card Overview Itinerary  -->
+    <string name="text_card_itinerary_duration">Durata: </string>
+    <string name="text_card_itinerary_from_you">da te</string>
+    <string name="image_description_itinerary">Immagine dell\'itinerario</string>
+    <string name="image_description_km_from_user">kilometri da te</string>
+    <string name="image_description_favourite">Aggiungi ai preferiti</string>
+
+
+    <!-- Strings related to Podium -->
+    <string name="title_podium">Classifica generale </string>
+
+
+    <!-- Strings related to authorization require -->
+    <string name="request_position_dialog">Abbiamo bisogno di accedere alla tua posizione per migliorare il nostro servizio.</string>
+
+    <!-- Strings related to lost connection -->
+    <string name="text_title_no_internet">Sei offline</string>
+    <string name="text_subtitle_no_internet">Controlla la tua connessione</string>
+    <string name="connection_lost_warning_message">Ops! Abbiamo perso la tua connessione</string>
+
+    <!-- Strings related to Favorite Fragment  -->
+    <string name="description_no_favorite_itinerary">Non hai ancora aggiunto itinerari ai tuoi preferiti. Prova a fare tap sull’icona del cuore degli itinerari</string>
+
+
+    <!-- Strings related to Home Fragment -->
+    <string name="text_title_itinerary">Itinerari</string>
+    <string name="text_subtitle_near_itinerary">Vicini a te</string>
+    <string name="text_subtitle_racomanded_itinerary">Consigliati</string>
+    <string name="text_banner_home_hello">Ciao </string>
+    <string name="text_banner_home_username"> Maria</string>
+    <string name="text_banner_home_you_are_in">Ti trovi a</string>
+    <string name="text_banner_home_location">Bari</string>
+    <string name="text_view_itinerary_nearest">Per visualizzare gli itinerari vicini a te attiva la geolocalizzazione</string>
+    <string name="text_warning_location_lost">La geolocalizzazione è disattiva, ecco gli itinerari per l\' ultima posizione rilevata</string>
+    <string name="link_see_all_itinerary"><u>Vedi tutti</u></string>
+
+    <!-- Strings related to Details Itinerary Fragment -->
+    <string name="text_title_descrioption_itinerary">Descrizione</string>
+    <string name="text_title_entertainment_itinerary">Intrattenimento</string>
+    <string name="text_quiz">Quiz</string>
+    <string name="text_puzzle">Puzzle</string>
+    <string name="text_find_difference">Trova 3 differenze</string>
+    <string name="text_augmented_reality">Realtà\n aumentata</string>
+    <string name="text_title_step_itinerary">Tappe itinerario</string>
+    <string name="text_title_reviews">Recensioni</string>
+    <string name="text_vote">Voto</string>
+    <string name="text_average">in media</string>
+    <string name="text_button_write_review">Valuta l\'itinerario</string>
+    <string name="text_no_reviews_yet">Ancora nessuna recensione</string>
+    <string name="description_image_itinerary_carousel">immagine dell\'itinerario</string>
+    <string name="description_image_download_itinerary">scarica l\'itinerario</string>
+    <string name="description_image_play_itinerary">Inizia itinerario</string>
+
+    <string name="search_placeholder">Nome itinerario</string>
+    <string name="ok">OK</string>
+
+    <!-- Strings related to Share Details Itinerary -->
+    <string name="share">Condividi</string>
+    <string name="share_text">Ti consiglio di dare uno sguardo all\'itinerario </string>
+
+    <!-- Strings related to Execute Itinerary -->
+    <string name="point_of_interest_not_found">Il punto di interesse inquadrato non è presente nell\'itinerario corrente</string>
+    <string name="text_title_section_curiosity">Curiosità</string>
+    <string name="text_title_section_audioguide">Audioguida</string>
+    <string name="link_leave_reviews"><u>Valuta l\'itinerario</u></string>
+    <string name="text_steps">Tappa</string>
+    <string name="text_of">di</string>
+    <string name="description_image_step">Immagine tappa</string>
+    <string name="description_image_play_audioguide">avvia audioguida</string>
+    <string name="description_flutter_play_minigames">Vai alla sezione dei minigiochi</string>
+
+    <!-- Strings related to Minigame Section -->
+    <string name="text_title_minigame">Minigiochi</string>
+    <string name="text_minigame_not_avable">Connettiti a internet per giocare!</string>
+
+    <!-- Strings related to Dialog Exit Puzzle -->
+    <string name="dialog_text_exit_minigame">Vuoi uscire dal minigame?</string>
+
+    <string name="dialog_text_badge">Complimenti hai guadagnato un nuovo badge, puoi visualizzarlo nella sezione "badge" presente nel profilo.</string>
+    <string name="dialog_text_badge_pasticciotti">Complimenti hai trovato il famigerato "Trofeo Pasticciotto", puoi visualizzarlo nella sezione "badge" presente nel profilo.</string>
+
+    <!-- Strings related to Dialog Download Guest -->
+    <string name="dilog_login_to_download">Effettua l\'accesso per poter scaricare gli itinerari</string>
+
+    <!-- Strings related to Dialog Delete Downloaded -->
+    <string name="dialog_text_delete_downloaded_itinerary">Vuoi eliminare l’itinerario dagli scaricati?</string>
+
+    <!-- Strings related to Dialog Delete Favorite -->
+    <string name="dialog_text_delete_favorite_itinerary">Vuoi eliminare l’itinerario dai preferiti?</string>
+
+    <!-- Strings related to Dialog Exit Itinerary -->
+    <string name="dialog_text_exit_itinerary">Vuoi uscire\n dall’itinerario?</string>
+    <string name="dialog_button_text_confirm">Conferma</string>
+    <string name="dialog_button_text_cancel">Annulla</string>
+
+    <!-- Strings related to Score Done Fragment -->
+    <string name="title_score">Complimenti!</string>
+    <string name="you_earned">Hai guadagnato</string>
+    <string name="go_to_ranking"><u>Vai alla Classifica</u></string>
+    <string name="points">punti!</string>
+    <string name="back_to_minigame">Torna ai minigiochi</string>
+    <string name="guest_points">Effettua l\'accesso o registrati per guadagnare punti e scalare la classifica!</string>
+    <string name="link_text_regame"><u>Rigioca</u></string>
+    <string name="text_subtitle_score_time_out">Sembra che il tempo sia scaduto!</string>
+    <string name="link_share_points">Condividi punteggio</string>
+    <string name="share_score_when_lose">Ho giocato al %s nel punto di interesse \"%s\" ma sfortunatamente ho perso!</string>
+    <string name="share_score_when_win">Ho giocato al %s nel punto di interesse \"%s\" e ho vinto, ottenendo %d punti!</string>
+    <string name="try_the_minigame">Prova anche tu e fammi sapere come va!</string>
+
+    <string name="text_subtitle_score_wrong">Risposta sbagliata!</string>
+    <string name="desctiption_image_score">immagine dei risultati del puzzle</string>
+
+    <!-- Strings related to Download Page -->
+    <string name="request_write_internal_storage_dialog">Abbiamo bisogno di accedere alla memoria interna per poter continuare.</string>
+    <string name="no_internet_connection">Connessione a internet non disponibile</string>
+    <string name="connect_to_internet">Connettiti a internet e riprova.</string>
+
+    <!-- Strings related to Dialog Send Review -->
+    <string name="dialog_text_title_thanks">Grazie!</string>
+    <string name="dialog_text_send_success_review">La tua valutazione è stata\n inviata con successo.</string>
+    <string name="text_back_to_itinerary">Torna ai dettagli</string>
+    <string name="link_share_review"><u>Condividi recensione</u></string>
+
+
+    <!-- Strings related to Review Fragment -->
+    <string name="text_title_review_itinerary">Valuta l\'itinerario</string>
+    <string name="text_subtitle_review">La tua opinione è importante</string>
+    <string name="text_leave_comment">Lascia un commento.</string>
+    <string name="text_go_back">Torna indietro</string>
+    <string name="unknown_user">Utente sconosciuto</string>
+
+    <!-- Strings related to Share Review -->
+    <plurals name="share_review_text">
+        <item quantity="one">Ho appena inserito una recensione da %d stella</item>
+        <item quantity="other">Ho appena inserito una recensione da %d stelle</item>
+    </plurals>
+    <string name="share_see_itinerary">Dai anche tu uno sguardo all\'itinerario \"%s\":</string>
+
+    <!-- Strings related to Quiz Fragment -->
+    <string name="text_question">Domanda</string>
+    <string name="request_bluetooth_dialog">Abbiamo bisogno di accedere al Bluetooth per effettuare alcune funzioni</string>
+    <string name="request_bluetooth_admin_dialog">Abbiamo bisogno di effettuare delle scansioni bluetooth per alcune funzioni</string>
+    <string name="ble_not_supported">Bluetooth Low Energy non supportato</string>
+    <string name="bluetooth_not_supported">Bluetooth non supportato</string>
+    <string name="request_bluetooth_connect_dialog">Abbiamo bisogno di accedere al Bluetooth per alcune funzioni</string>
+    <string name="nearTo">Sembra che tu sia vicino a:</string>
+    <string name="clickToNavigate">Clicca VAI per spostarti</string>
+    <string name="notNow">non ora</string>
+    <string name="go">vai</string>
+
+    <!-- Strings related to Snackbars -->
+    <string name="snackbar_text_favorite">Ottimo! Ora puoi trovare questo itinerario nella sezione “Preferiti”.</string>
+    <string name="snackbar_text_download">Ottimo! Ora puoi trovare questo itinerario nella sezione “Scaricati”.</string>
+
+
+    <!-- Strings related to Badge Fragment -->
+    <string name="my_badges_title">I miei badge</string>
+    <string name="title_reward">Obiettivo raggiunto!</string>
+    <string name="title_trophy_base">Trofeo base</string>
+    <string name="description_card_trophy">Raggiungi 25 punti</string>
+    <string name="title_trophy_bronze">Trofeo Bronzo</string>
+    <string name="description_trophy_bronze">Raggiungi 100 punti</string>
+    <string name="title_trophy_silver">Trofeo Argento</string>
+    <string name="description_trophy_silver">Raggiungi 250 punti</string>
+    <string name="description_trophy_gold">Raggiungi 500 punti</string>
+    <string name="title_trophy_gold">Trofeo Oro</string>
+    <string name="image_description_trophy_base">immagine badge 25 punti</string>
+    <string name="image_description_trophy_bronze">immagine badge 100 punti</string>
+    <string name="image_description_trophy_silver">immagine badge 250 punti</string>
+    <string name="image_description_trophy_gold">immagine badge 500 punti</string>
+    <string name="title_trophy_pasticciotto">Trofeo Pasticciotto</string>
+    <string name="description_trophy_pasticciotti">Complimenti hai trovato il trofeo nascosto!</string>
+    <string name="image_description_easteregg">easterEgg</string>
+
+    <!-- Strings related to About Us Fragment -->
+    <string name="title_about_us">Chi siamo</string>
+    <string name="enable_admin">Enable Admin</string>
+    <string name="admin">Admin</string>
+    <string name="le_tue_prenotazioni">Le tue prenotazioni</string>
+
+</resources>

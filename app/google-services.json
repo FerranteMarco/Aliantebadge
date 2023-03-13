@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "487543843903",
+    "project_id": "aliante-badge",
+    "storage_bucket": "aliante-badge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487543843903:android:d78c1e28d019cae4d69c8a",
+        "android_client_info": {
+          "package_name": "com.example.aliantebadge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487543843903-1bc1s0or5uk0btrq4q5khgf647i8inqc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0D1dV8Bz41l3pkCCVrc1hFHlPAaIbOWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487543843903-1bc1s0or5uk0btrq4q5khgf647i8inqc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

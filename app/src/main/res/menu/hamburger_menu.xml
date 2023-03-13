@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:id="@+id/appOption" android:checkableBehavior="single">
+       
+        <item
+            android:id="@+id/itemProfile"
+            android:title="@string/nav_profile"
+            android:icon="@drawable/ic_account_circle_24"
+
+            />
+        <item
+            android:id="@+id/itemBooking"
+            android:title="@string/le_tue_prenotazioni"
+            android:icon="@drawable/reservation" />
+
+    </group>
+
+    <group android:id="@+id/versionAppOption"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/itemSettings"
+            android:title="@string/hamburger_menu_text_settings"
+            android:icon="@drawable/ic_round_settings_24" />
+
+    </group>
+
+    <group android:id="@+id/adminOption"
+        android:checkableBehavior="single"
+        android:visible="false">
+        <item
+            android:id="@+id/itemAdmin"
+            android:title="@string/admin"
+            android:icon="@drawable/ic_account_circle_24" />
+    </group>
+
+    <group android:id="@+id/adminEnableOption"
+        android:checkableBehavior="single"
+        android:visible="false">
+        <item
+            android:id="@+id/itemEnableAdmin"
+            android:title="@string/enable_admin"
+            android:icon="@drawable/ic_account_circle_24" />
+
+    </group>
+
+
+    <group android:id="@+id/exitOption" android:checkableBehavior="single">
+        <item
+            android:id="@+id/itemSignOut"
+            android:title="@string/hamburger_menu_text_sign_out"
+            android:icon="@drawable/ic_round_exit_to_app_24" />
+    </group>
+
+
+</menu>

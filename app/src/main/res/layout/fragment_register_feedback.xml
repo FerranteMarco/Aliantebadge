@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+
+        <TextView
+            android:id="@+id/textViewTitleFeedback"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/text_title_feedback"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            app:layout_constraintTop_toBottomOf="@+id/imageRegisterFeedback" />
+
+        <TextView
+            android:id="@+id/textViewDescriptionFeedback"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/text_feedback"
+            android:textAlignment="center"
+            android:textColor="#757575"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/imageRegisterFeedback" />
+
+        <Button
+            android:id="@+id/buttonGotoTutorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:height="50dp"
+            android:text="@string/text_start_female"
+            android:textSize="20sp"
+            app:cornerRadius="10dp"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
