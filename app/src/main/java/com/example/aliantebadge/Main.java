@@ -138,7 +138,7 @@ public class Main extends AppCompatActivity {
                     }
 
                     //avvio l'activity di login
-                    Intent LoginActivity = new Intent(Main.this, com.example.grbarber.login.LoginActivity.class);        //activity chiamante, activity chiamata
+                    Intent LoginActivity = new Intent(Main.this, com.example.aliantebadge.login.LoginActivity.class);        //activity chiamante, activity chiamata
                     startActivity(LoginActivity);
                     finish();
                     return true;

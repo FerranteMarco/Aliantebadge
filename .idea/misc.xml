@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/marco/AndroidStudioProjects/Aliantebadge/app/src/main/res/drawable/background_change_password.xml" value="0.2075" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/Aliantebadge/app/src/main/res/layout/fragment_theme.xml" value="0.2" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/Aliantebadge/app/src/main/res/layout/header_hamburger_menu.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/Aliantebadge/app/src/main/res/menu/hamburger_menu.xml" value="0.18541666666666667" />
       </map>

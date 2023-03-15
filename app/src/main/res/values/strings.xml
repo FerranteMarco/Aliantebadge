@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aliante Badge</string>
+    <string name="app_name">GR Barber</string>
 
     <!-- Strings related to Splash Screen -->
     <string name="image_description_splash">logo dello splash screen</string>
@@ -274,12 +274,12 @@
 
     <string name="text_subtitle_score_wrong">Risposta sbagliata!</string>
     <string name="desctiption_image_score">immagine dei risultati del puzzle</string>
-
+    
     <!-- Strings related to Download Page -->
     <string name="request_write_internal_storage_dialog">Abbiamo bisogno di accedere alla memoria interna per poter continuare.</string>
     <string name="no_internet_connection">Connessione a internet non disponibile</string>
     <string name="connect_to_internet">Connettiti a internet e riprova.</string>
-
+    
     <!-- Strings related to Dialog Send Review -->
     <string name="dialog_text_title_thanks">Grazie!</string>
     <string name="dialog_text_send_success_review">La tua valutazione è stata\n inviata con successo.</string>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/allReservationOptions"
+        android:background="@color/item_color"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:weightSum="5"
+        android:padding="5dp"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Visualizza tutte le prenotazioni"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_toolbar" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_baseline_navigate_next_24_black" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clientViewOptions"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:background="@color/item_color"
+        android:clickable="true"
+        android:padding="5dp"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Visualizza tutti i Clienti"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_toolbar" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_baseline_navigate_next_24_black" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="5dp"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newClientOptions"
+        android:background="@color/item_color"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:weightSum="5"
+        android:padding="5dp"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Visualizza nuovi Clienti"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_toolbar" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_baseline_navigate_next_24_black" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+<!--
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/showReviewOptions"
+        android:background="@color/item_color"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:weightSum="5"
+        android:padding="5dp"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Visualizza le recensioni"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_toolbar" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_baseline_navigate_next_24_black" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+-->
+
+</LinearLayout>

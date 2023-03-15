@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_blue">#508ec0</color>
+    <color name="light_blue">#2331ff</color>
+    <color name="teal">#18A3A2</color>
+    <color name="red_wrong">#FF0000</color>
+    <color name="green_right">#0ECF38</color>
+    <color name="light_green">#111111</color>
+    <color name="black">#FFFFFF</color>
+    <color name="white">#000000</color>
+    <color name="blue">#2271b3</color>
+    <color name="red">#99670000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="background">#000000</color>
+    <color name="background_selezionato">#000000</color>
+    <color name="item_color">#111111</color>
+    <color name="item_color_pressed">#424242</color>
+    <color name="white_white">#FFFFFF</color>
+    <color name="black_black">#000000</color>
+    <color name="grey">#a0a0a0</color>
+    <color name="light_grey">#3f3f3f</color>
+    <color name="pisello">#000000</color>
+    <color name="pisello_chiaro">#000000</color>
+    <color name="white_input">#202020</color>
+    <color name="backgroud_loading">#99111111</color>
+
+</resources>

@@ -1,0 +1,103 @@
+<resources>
+    <dimen name="activity_horizontal_margin">48dp</dimen>
+    <dimen name="fab_margin">32dp</dimen>
+
+    <!-- dimension related to fragment_login -->
+    <dimen name="textInputlayout_width">500dp</dimen>
+    <dimen name="width_Button">300dp</dimen>
+    <dimen name="height_Button">55dp</dimen>
+    <dimen name="textsize_TitleLogin">46sp</dimen>
+    <dimen name="margin_Top_Linear">10dp</dimen>
+    <dimen name="margin_Top1_login">15dp</dimen>
+    <dimen name="margin_Top2_login">13dp</dimen>
+    <dimen name="margin_Top3_login">8dp</dimen>
+    <dimen name="margin_Top4_login">24dp</dimen>
+    <dimen name="margin_Top_quiz">10dp</dimen>
+    <dimen name="textButton">23sp</dimen>
+    <dimen name="heightButton">60dp</dimen>
+    <dimen name="textsize1">22sp</dimen>
+    <dimen name="textsize2">25sp</dimen>
+
+
+
+    <dimen name="width_backImg">48dp</dimen>
+    <dimen name="margin_Top6_login">48dp</dimen>
+    <dimen name="height_backImg">40dp</dimen>
+    <dimen name="margin_Top5_login">21dp</dimen>
+
+    <dimen name="textsize_TitlePw_Recovery">37sp</dimen>
+    <dimen name="margin_Top1_text">35dp</dimen>
+
+    <dimen name="textsize_subtitle">22sp</dimen>
+    <dimen name="textsize_subtitleProfile">25sp</dimen>
+
+    <dimen name="textsize3">26sp</dimen>
+    <dimen name="textsize4">32sp</dimen>
+    <dimen name="textsize5">38sp</dimen>
+    <dimen name="textsize6">52sp</dimen>
+    <dimen name="textsize7">35sp</dimen>
+    <dimen name="textsize8">25sp</dimen>
+    <dimen name="text_toolbar">25sp</dimen>
+    <dimen name="textsize9">35sp</dimen>
+    <dimen name="textsize10">27sp</dimen>
+
+    <dimen name="marginBottom1">20dp</dimen>
+    <dimen name="marginBottom2">30dp</dimen>
+    <dimen name="marginBottom3">24dp</dimen>
+
+    <dimen name="viewPager_width">680dp</dimen>
+    <dimen name="viewPager_height">800dp</dimen>
+
+    <dimen name="circleImage2_width">230dp</dimen>
+    <dimen name="circleImage2_height">160dp</dimen>
+
+    <dimen name="circleImage3_width">70dp</dimen>
+    <dimen name="circleImage3_height">56dp</dimen>
+
+    <dimen name="text_position">27sp</dimen>
+
+    <dimen name="circleImage_width">247dp</dimen>
+    <dimen name="circleImage_height">200dp</dimen>
+
+    <dimen name="imgViewCard_height">350dp</dimen>
+
+    <dimen name="circleImage4_width">60dp</dimen>
+    <dimen name="circleImage4_height">60dp</dimen>
+
+    <dimen name="imgViewItinerary_height">400dp</dimen>
+
+
+    <dimen name="marker_width">30dp</dimen>
+    <dimen name="marker_height">30dp</dimen>
+
+    <dimen name="imgbutton_width">36dp</dimen>
+    <dimen name="imgbutton_height">36dp</dimen>
+    <dimen name="textsize11">52sp</dimen>
+
+    <dimen name="itemquizAnswer_width">400dp</dimen>
+    <dimen name="itemquizAnswer_height">50dp</dimen>
+
+    <dimen name="imgScoreDone_width">330dp</dimen>
+    <dimen name="imgScoreDone_height">330dp</dimen>
+    <dimen name="paddingEnd">75dp</dimen>
+    <dimen name="paddingStart">75dp</dimen>
+    <dimen name="paddingBottom">125dp</dimen>
+
+    <dimen name="Grid_width">400dp</dimen>
+    <dimen name="Grid_height">400dp</dimen>
+    <dimen name="Grid2_width">300dp</dimen>
+    <dimen name="Grid2_height">300dp</dimen>
+
+    <dimen name="QrCode_width">300dp</dimen>
+    <dimen name="QrCode_height">300dp</dimen>
+
+    <dimen name="quiz_width">140dp</dimen>
+    <dimen name="box_review_height">120dp</dimen>
+
+    <dimen name="marginTopOnboarding">50dp</dimen>
+    <dimen name="marginTopOnboarding2">40dp</dimen>
+    <dimen name="textsizeOnboarding2">42sp</dimen>
+    <dimen name="descriptionOnboarding2">30sp</dimen>
+    <dimen name="bottomtext">28sp</dimen>
+
+</resources>

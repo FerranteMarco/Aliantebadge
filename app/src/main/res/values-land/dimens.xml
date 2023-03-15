@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="activity_horizontal_margin">48dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="viewPager_width2">202dp</dimen>
+    <dimen name="textsize_subtitle">12sp</dimen>
+
+    <dimen name="imgViewCard_height">200dp</dimen>
+    <dimen name="textsize11">32sp</dimen>
+</resources>
