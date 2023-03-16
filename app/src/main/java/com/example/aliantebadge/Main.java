@@ -26,7 +26,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.aliantebadge.login.LoginActivity;
 import com.example.aliantebadge.roomDB.AppDatabase;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -118,10 +117,6 @@ public class Main extends AppCompatActivity {
                     return true;
 
 
-                case R.id.itemBooking:
-                    closeDrawerIfOpen();
-                    navController.navigate(R.id.reservationFragment);
-                    return true;
 
                 case R.id.itemProfile:
                     closeDrawerIfOpen();

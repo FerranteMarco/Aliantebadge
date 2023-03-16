@@ -2,6 +2,7 @@ package com.example.aliantebadge.login;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,8 @@ public class RegisterFragment extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        //System.out.println("modello "+ getDeviceName());
         mAuth = FirebaseAuth.getInstance();
         mNav = Navigation.findNavController(view);
         final ImageView back = view.findViewById(R.id.imageViewBackArrow);
@@ -182,12 +185,11 @@ public class RegisterFragment extends Fragment{
 
         user.put("first_name", firstName);
         user.put("second_name", secondName);
+        user.put("userName","");
         user.put("email", email);
         user.put("surname",surname);
-        user.put("accepted", false);
+        user.put("phoneModel", getDeviceName());
         user.put("versionApp", BuildConfig.VERSION_NAME);
-
-
 
         firestoreDB.collection("Users").document(uid)
                 .set(user)
@@ -200,8 +202,6 @@ public class RegisterFragment extends Fragment{
                         user.email = email;
                         user.firstName = firstName;
                         user.secondName = secondName;
-                        user.accepted = false;
-
 
                         db.userDao().insertUser(user);
                         mNav.navigate(R.id.action_registerFragment_to_registerFeedbackFragment);
@@ -214,4 +214,30 @@ public class RegisterFragment extends Fragment{
                     }
                 });
     }
+
+    public String getDeviceName() {
+        String manufacturer = Build.MANUFACTURER;
+        String model = Build.MODEL;
+        if (model.toLowerCase().startsWith(manufacturer.toLowerCase())) {
+            return capitalize(model);
+        } else {
+            return capitalize(manufacturer) + " " + model;
+        }
+    }
+
+
+    private String capitalize(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        char first = s.charAt(0);
+        if (Character.isUpperCase(first)) {
+            return s;
+        } else {
+            return Character.toUpperCase(first) + s.substring(1);
+        }
+    }
+
+
+
 }

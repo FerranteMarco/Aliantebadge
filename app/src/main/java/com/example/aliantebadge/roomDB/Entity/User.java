@@ -31,7 +31,4 @@ public class User {
     @ColumnInfo(name = "email")
     public String email;
 
-    @ColumnInfo(name = "accepted")
-    public boolean accepted;
-
 }

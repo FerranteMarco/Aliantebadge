@@ -17,14 +17,6 @@
                motion:motionTarget="@+id/imageViewSplashLogo"
                motion:framePosition="0"
                android:scaleY="1" />
-           <KeyAttribute
-               motion:motionTarget="@+id/imageViewSplashLogo"
-               motion:framePosition="30"
-               android:scaleX="0.8" />
-           <KeyAttribute
-               motion:motionTarget="@+id/imageViewSplashLogo"
-               motion:framePosition="30"
-               android:scaleY="0.8" />
        </KeyFrameSet>
     </Transition>
 

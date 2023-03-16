@@ -5,18 +5,11 @@
     android:id="@+id/nav_home"
     app:startDestination="@id/homeFragment">
 
-    <fragment
-        android:id="@+id/otherPrenotatioSetting"
-        android:name="com.example.grbarber.home.menu_items.admin.item_admin.OtherPrenotationSettingFragment"
-        android:label="Ordina le prenotazioni">
-        <action
-            android:id="@+id/action_otherPrenotatioSetting_to_allReservationFragment"
-            app:destination="@id/allReservationFragment" />
-    </fragment>
+
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.grbarber.home.menu_items.profile.ProfileFragment"
+        android:name="com.example.aliantebadge.home.menu_items.profile.ProfileFragment"
         android:label="@string/nav_profile">
         <action
             android:id="@+id/action_profileFragment_to_changePasswordFragment"
@@ -37,7 +30,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.grbarber.home.HomeFragment"
+        android:name="com.example.aliantebadge.home.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home" >
         <action
@@ -50,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/adminFragment"
-        android:name="com.example.grbarber.home.menu_items.admin.AdminFragment"
+        android:name="com.example.aliantebadge.home.menu_items.admin.AdminFragment"
         android:label="Admin">
         <action
             android:id="@+id/action_adminFragment_to_acceptFragment"
@@ -58,9 +51,7 @@
         <action
             android:id="@+id/action_adminFragment_to_clientViewFragment"
             app:destination="@id/clientViewFragment" />
-        <action
-            android:id="@+id/action_adminFragment_to_otherPrenotatioSetting"
-            app:destination="@id/otherPrenotatioSetting" />
+
         <action
             android:id="@+id/action_adminFragment_to_showReviewFragment"
             app:destination="@id/showReviewFragment" />
@@ -68,30 +59,30 @@
 
     <fragment
         android:id="@+id/themeFragment"
-        android:name="com.example.grbarber.home.menu_items.setting.item_setting.ThemeFragment"
+        android:name="com.example.aliantebadge.home.menu_items.setting.item_setting.ThemeFragment"
         android:label="Temi">
     </fragment>
 
     <fragment
         android:id="@+id/showReviewFragment"
-        android:name="com.example.grbarber.home.menu_items.admin.item_admin.ShowReviewFragment"
+        android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ShowReviewFragment"
         android:label="ShowReview">
     </fragment>
 
     <fragment
         android:id="@+id/reviewFragment"
-        android:name="com.example.grbarber.home.menu_items.setting.item_setting.ReviewFragment"
+        android:name="com.example.aliantebadge.home.menu_items.setting.item_setting.ReviewFragment"
         android:label="Review">
     </fragment>
 
     <fragment
         android:id="@+id/enableAdminFragment"
-        android:name="com.example.grbarber.home.menu_items.EnableAdminFragment"
+        android:name="com.example.aliantebadge.home.menu_items.EnableAdminFragment"
         android:label="Admin mode">
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.example.grbarber.home.menu_items.setting.SettingFragment"
+        android:name="com.example.aliantebadge.home.menu_items.setting.SettingFragment"
         android:label="Settings">
         <action
             android:id="@+id/action_settingFragment_to_versionAppFragment"
@@ -105,42 +96,42 @@
     </fragment>
     <fragment
         android:id="@+id/versionAppFragment"
-        android:name="com.example.grbarber.home.menu_items.setting.item_setting.VersionAppFragment"
+        android:name="com.example.aliantebadge.home.menu_items.setting.item_setting.VersionAppFragment"
         android:label="Version app">
     </fragment>
     <fragment
         android:id="@+id/prenoteFragment"
-        android:name="com.example.grbarber.home.PrenoteFragment"
+        android:name="com.example.aliantebadge.home.PrenoteFragment"
         android:label="Prenota da GR Barber">
     </fragment>
     <fragment
     android:id="@+id/clientViewFragment"
-    android:name="com.example.grbarber.home.menu_items.admin.item_admin.ClientViewFragment"
+    android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ClientViewFragment"
     android:label="I tuoi clienti">
 </fragment>
 
     <fragment
         android:id="@+id/acceptFragment"
-        android:name="com.example.grbarber.home.menu_items.admin.item_admin.ManageClientFragment"
+        android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ManageClientFragment"
         android:label="Accetta nuovi clienti">
     </fragment>
     <fragment
         android:id="@+id/reservationFragment"
-        android:name="com.example.grbarber.home.menu_items.MyPrenotationFragment"
+        android:name="com.example.aliantebadge.home.menu_items.MyPrenotationFragment"
         android:label="Gestisci le tue prenotazioni">
     </fragment>
     <fragment
     android:id="@+id/allReservationFragment"
-    android:name="com.example.grbarber.home.menu_items.admin.item_admin.OtherPrenotationFragment"
+    android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.OtherPrenotationFragment"
     android:label="Gestisci tutte le prenotazioni">
 </fragment>
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.example.grbarber.home.menu_items.profile.ChangePasswordFragment"
+        android:name="com.example.aliantebadge.home.menu_items.profile.ChangePasswordFragment"
         android:label="@string/nav_change_password" />
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.example.grbarber.home.menu_items.profile.EditProfileFragment"
+        android:name="com.example.aliantebadge.home.menu_items.profile.EditProfileFragment"
         android:label="@string/nav_edit_profile"
         tools:layout="@layout/fragment_edit_profile" >
 

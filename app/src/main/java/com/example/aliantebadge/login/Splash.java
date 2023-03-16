@@ -45,8 +45,9 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.splash);
         progressBar = findViewById(R.id.include);
 
-        prefs = getSharedPreferences("gr_theme", MODE_PRIVATE);
-        int theme = prefs.getInt("theme", -1);
+        prefs = getSharedPreferences("aliante_theme", MODE_PRIVATE);
+        int theme = 0;
+        //int theme = prefs.getInt("theme", -1);
 
         switch (theme){
             case 0:
@@ -152,7 +153,6 @@ public class Splash extends AppCompatActivity {
 
                         Map<String, Object> documentData = document.getData();
 
-
                         User user = new User();
                         user.uid = uid;
 
@@ -162,9 +162,7 @@ public class Splash extends AppCompatActivity {
                         user.firstName = (String) documentData.get("first_name");
                         user.secondName = (String) documentData.get("second_name");
 
-                        assert documentData.get("accepted") != null;
-                        user.accepted = (boolean) documentData.get("accepted");
-                        db.userDao().deleteAll();
+                         db.userDao().deleteAll();
 
                         db.userDao().insertUser(user);
                     }

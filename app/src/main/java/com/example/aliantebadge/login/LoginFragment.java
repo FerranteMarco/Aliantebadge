@@ -169,7 +169,6 @@ public class LoginFragment extends Fragment {
                             user.email = (String) documentData.get("email");
                             user.firstName = (String) documentData.get("first_name");
                             user.secondName = (String) documentData.get("second_name");
-                            user.accepted = (boolean) documentData.get("accepted");
 
                             db.userDao().insertUser(user);
                         }

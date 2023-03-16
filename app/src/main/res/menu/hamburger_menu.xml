@@ -11,10 +11,7 @@
             android:icon="@drawable/ic_account_circle_24"
 
             />
-        <item
-            android:id="@+id/itemBooking"
-            android:title="@string/le_tue_prenotazioni"
-            android:icon="@drawable/reservation" />
+
 
     </group>
 

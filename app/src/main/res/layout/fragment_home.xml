@@ -81,14 +81,9 @@
                     android:background="@color/pisello"
                     android:paddingHorizontal="30dp"
                     android:paddingBottom="20dp"
-                    android:text="Seleziona una data in cui vuoi prenotare"
+                    android:text="Timbra il tuo badge toccando il pulsante sottostante"
                     android:textColor="@color/dark_blue"
                     android:textSize="22sp" />
-
-                <CalendarView
-                    android:id="@+id/calendarView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/buttonPrenota"
@@ -96,38 +91,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Avanti"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="Attendi di essere accettato per poter prenotare. Quando sai di essere stato accettato ricarica la pagina"
-                    android:textSize="20sp" />
-
-
-                <ImageButton
-                    android:id="@+id/imageButtonRicarica"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/icn_refresh"
-                    android:contentDescription="bottone per ricaricare i dati dell'utente"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/reviewCardRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="bottom"
-                    android:layout_marginTop="10dp"
-                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:orientation="horizontal">
-
-                </androidx.recyclerview.widget.RecyclerView>
 
             </LinearLayout>
 
@@ -141,7 +106,7 @@
                 android:gravity="center"
                 android:text="Aggiorna la versione dell'applicazione dal menù in alto a sinistra"
                 android:textSize="20sp"
-                android:visibility="gone" />
+                android:visibility="invisible" />
 
         </LinearLayout>
 

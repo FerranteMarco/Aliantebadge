@@ -54,11 +54,6 @@ public interface UserDao {
     void deleteByUserId(String uid);
 
 
-    @Query("select * FROM user WHERE accepted = :val")
-    List<User> getUserToAccept(boolean val);
-
-
-
     @Query("DELETE FROM user")
     void deleteAll();
 }
