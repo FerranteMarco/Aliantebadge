@@ -14,9 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.grbarber.Main;
-import com.example.grbarber.R;
-import com.example.grbarber.roomDB.AppDatabase;
+import com.example.aliantebadge.Main;
+import com.example.aliantebadge.R;
+import com.example.aliantebadge.roomDB.AppDatabase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

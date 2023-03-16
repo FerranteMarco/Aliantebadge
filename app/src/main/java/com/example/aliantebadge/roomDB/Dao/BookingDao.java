@@ -4,7 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.example.grbarber.roomDB.Entity.Booking;
+import com.example.aliantebadge.roomDB.Entity.Booking;
 
 import java.util.List;
 

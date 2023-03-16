@@ -5,7 +5,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.grbarber.R;
+import com.example.aliantebadge.R;
 
 public class LoginActivity extends AppCompatActivity {
     View progressBar;

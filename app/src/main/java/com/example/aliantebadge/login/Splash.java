@@ -17,11 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.motion.widget.MotionLayout;
 
-import com.example.grbarber.BuildConfig;
-import com.example.grbarber.R;
-import com.example.grbarber.Variable;
-import com.example.grbarber.roomDB.AppDatabase;
-import com.example.grbarber.roomDB.Entity.User;
+import com.example.aliantebadge.BuildConfig;
+import com.example.aliantebadge.R;
+import com.example.aliantebadge.Variable;
+import com.example.aliantebadge.roomDB.AppDatabase;
+import com.example.aliantebadge.roomDB.Entity.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -130,7 +130,7 @@ public class Splash extends AppCompatActivity {
             unregisterReceiver(broadcastReceiver);
 
             //altrimenti procedo con la normale esecuzione e mostro la pagina di login
-            startActivity(new Intent(Splash.this, com.example.grbarber.login.LoginActivity.class));
+            startActivity(new Intent(Splash.this, com.example.aliantebadge.login.LoginActivity.class));
 
             //chiudo l'activity in modo da non mostrare lo splash quando l'utente clicca il tasto indietro
             finish();
@@ -231,7 +231,7 @@ public class Splash extends AppCompatActivity {
                     unregisterReceiver(broadcastReceiver);
 
                     //altrimenti procedo con la normale esecuzione e mostro la pagina di login
-                    startActivity(new Intent(Splash.this, com.example.grbarber.login.LoginActivity.class));
+                    startActivity(new Intent(Splash.this, com.example.aliantebadge.login.LoginActivity.class));
 
                     //chiudo l'activity in modo da non mostrare lo splash quando l'utente clicca il tasto indietro
                     finish();

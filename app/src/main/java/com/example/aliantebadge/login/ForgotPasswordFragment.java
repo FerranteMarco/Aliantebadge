@@ -18,8 +18,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.grbarber.ControlInput;
-import com.example.grbarber.R;
+import com.example.aliantebadge.ControlInput;
+import com.example.aliantebadge.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;

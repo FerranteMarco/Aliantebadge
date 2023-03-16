@@ -17,11 +17,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.grbarber.BuildConfig;
-import com.example.grbarber.ControlInput;
-import com.example.grbarber.R;
-import com.example.grbarber.roomDB.AppDatabase;
-import com.example.grbarber.roomDB.Entity.User;
+import com.example.aliantebadge.BuildConfig;
+import com.example.aliantebadge.ControlInput;
+import com.example.aliantebadge.R;
+import com.example.aliantebadge.roomDB.AppDatabase;
+import com.example.aliantebadge.roomDB.Entity.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
