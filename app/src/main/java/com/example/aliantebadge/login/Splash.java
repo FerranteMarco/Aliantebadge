@@ -46,8 +46,8 @@ public class Splash extends AppCompatActivity {
         progressBar = findViewById(R.id.include);
 
         prefs = getSharedPreferences("aliante_theme", MODE_PRIVATE);
-        int theme = 0;
-        //int theme = prefs.getInt("theme", -1);
+        //int theme = 0;
+        int theme = prefs.getInt("theme", -1);
 
         switch (theme){
             case 0:
@@ -178,14 +178,17 @@ public class Splash extends AppCompatActivity {
 
     private void checkLastVersionAvailable() {
 
-        mFirestore.collection("Version").whereNotEqualTo("newVerionApp",BuildConfig.VERSION_NAME)
+        mFirestore.collection("Version").document("versionApp")//.whereNotEqualTo("newVersionApp",BuildConfig.VERSION_NAME)
                 .get()
                 .addOnCompleteListener(task1 -> {
                     if (task1.isSuccessful()) {
-                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task1.getResult())) {
+                        //for (QueryDocumentSnapshot document : Objects.requireNonNull(task1.getResult())) {
+
+                            DocumentSnapshot document = task1.getResult();
+                            if (document.exists()) {
 
                             Map<String, Object> documentData = document.getData();
-                            String actualVersion = (String) documentData.get("newVerionApp");
+                            String actualVersion = (String) documentData.get("newVersionApp");
                             boolean availableUpdate = actualVersion.compareTo(BuildConfig.VERSION_NAME) > 0;
                             System.out.println("App da aggiornare ?? " + availableUpdate);
 
@@ -198,6 +201,7 @@ public class Splash extends AppCompatActivity {
                     } else {
                         Log.d(null, "Error getting documents: ", task1.getException());
                     }
+                    System.out.println("current version? " + BuildConfig.VERSION_NAME);
 
 
                 });
@@ -211,6 +215,8 @@ public class Splash extends AppCompatActivity {
                             Map<String, Object> documentData = document.getData();
                             String minV =(String)documentData.get("minVersionApp");
                             boolean toUpdate = minV.compareTo(BuildConfig.VERSION_NAME) > 0;
+
+                            System.out.println("min versione online ? " + minV);
 
                             if (document.exists()) {
                                 Variable.setVersionIsToUpdate(toUpdate);

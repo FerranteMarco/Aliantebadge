@@ -126,42 +126,7 @@
         android:layout_width="match_parent"
         android:layout_height="5dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reviewOption"
-        android:background="@color/item_color"
-        android:orientation="horizontal"
-        android:clickable="true"
-        android:weightSum="5"
-        android:focusable="true">
 
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="fill"
-            android:layout_marginStart="15dp"
-            android:layout_weight="1"
-            android:padding="15dp"
-
-            android:text="Scrivi una recensione"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_toolbar" />
-
-        <ImageView
-            android:id="@+id/reviewButton"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="4"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_baseline_navigate_next_24_black" />
-
-
-
-    </LinearLayout>
 
     <Space
         android:layout_width="match_parent"

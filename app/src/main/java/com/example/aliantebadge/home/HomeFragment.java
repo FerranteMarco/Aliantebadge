@@ -35,11 +35,10 @@ import java.util.TimeZone;
 public class HomeFragment extends Fragment {
 
     private AppDatabase db = null;
-    private NavController mNav;
-    Button prenota;
     Date date = new Date();
     Date date2 = new Date();
     FirebaseFirestore mFirestore;
+    Button timbra;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,7 @@ public class HomeFragment extends Fragment {
         if(Variable.isaBoolean(db.userDao().getCurrentUser().uid))
             Variable.setAdmin(true);
         else {
-            SharedPreferences preferences = requireActivity().getSharedPreferences("GR_Barber", Context.MODE_PRIVATE);
+            SharedPreferences preferences = requireActivity().getSharedPreferences("Aliante", Context.MODE_PRIVATE);
             Variable.setAdmin(preferences.getBoolean("enableAdmin", true));
         }
 
@@ -78,13 +77,12 @@ public class HomeFragment extends Fragment {
         date = new Date();
         date2 = new Date();
 
-        mNav = Navigation.findNavController(view);
+        //mNav = Navigation.findNavController(view);
+        timbra = view.findViewById(R.id.buttonTimbra);
 
 
         TextView username;
 
-
-        prenota = view.findViewById(R.id.buttonPrenota);
         username = view.findViewById(R.id.fragmentHomeUsername);
 
         TextView versionToUp = view.findViewById(R.id.versionToUp);
@@ -93,7 +91,7 @@ public class HomeFragment extends Fragment {
             bannerHome.setVisibility(View.GONE);
             LinearLayout bodyHome = view.findViewById(R.id.bodyHome);
             bodyHome.setVisibility(View.GONE);
-            //prenota.setVisibility(View.GONE);
+            //timbra.setVisibility(View.GONE);
             versionToUp.setVisibility(View.VISIBLE);
             versionToUp.setTextColor(requireActivity().getColor(R.color.red_wrong));
             //calendarView.setVisibility(View.GONE);
@@ -104,53 +102,11 @@ public class HomeFragment extends Fragment {
 
 
 
-        prenota.setOnClickListener(view12 -> {
+        timbra.setOnClickListener(view12 -> {
 
         });
 
        if(db.userDao().getCurrentUser() != null)
             username.setText(db.userDao().getCurrentUser().firstName);
     }
-
-
-    private void updateUser() {
-
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-
-        if(mAuth.getCurrentUser() != null) {
-            String uid = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
-
-
-            mFirestore.collection("Users").document(uid).get().addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-
-                        Map<String, Object> documentData = document.getData();
-
-                        db.userDao().deleteAll();
-
-                        User user = new User();
-                        user.uid = uid;
-
-                        assert documentData != null;
-
-                        user.email = (String) documentData.get("email");
-                        user.firstName = (String) documentData.get("first_name");
-                        user.secondName = (String) documentData.get("second_name");
-
-
-                        db.userDao().insertUser(user);
-                    }
-                }
-
-            });
-        }
-    }
-
-
-
-
-
 }

@@ -3,7 +3,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <group android:id="@+id/appOption" android:checkableBehavior="single">
+  <!--  <group android:id="@+id/appOption" android:checkableBehavior="single">
        
         <item
             android:id="@+id/itemProfile"
@@ -13,7 +13,7 @@
             />
 
 
-    </group>
+    </group>-->
 
     <group android:id="@+id/versionAppOption"
         android:checkableBehavior="single">

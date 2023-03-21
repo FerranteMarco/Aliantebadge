@@ -7,7 +7,7 @@
 
 
 
-    <fragment
+    <!--<fragment
         android:id="@+id/profileFragment"
         android:name="com.example.aliantebadge.home.menu_items.profile.ProfileFragment"
         android:label="@string/nav_profile">
@@ -26,22 +26,15 @@
             app:popExitAnim="@anim/slide_out_to_right"
             app:popEnterAnim="@anim/slide_in_from_left"/>
 
-    </fragment>
+    </fragment>-->
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.aliantebadge.home.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_home_to_prenote"
-            app:destination="@id/prenoteFragment"
-            app:enterAnim="@anim/slide_in_from_right"
-            app:exitAnim="@anim/slide_out_to_left"
-            app:popExitAnim="@anim/slide_out_to_right"
-            app:popEnterAnim="@anim/slide_in_from_left"/>
     </fragment>
-    <fragment
+   <!-- <fragment
         android:id="@+id/adminFragment"
         android:name="com.example.aliantebadge.home.menu_items.admin.AdminFragment"
         android:label="Admin">
@@ -55,14 +48,14 @@
         <action
             android:id="@+id/action_adminFragment_to_showReviewFragment"
             app:destination="@id/showReviewFragment" />
-    </fragment>
+    </fragment>-->
 
     <fragment
         android:id="@+id/themeFragment"
-        android:name="com.example.aliantebadge.home.menu_items.setting.item_setting.ThemeFragment"
+        android:name="com.example.aliantebadge.home.menu_item.setting.item_setting.ThemeFragment"
         android:label="Temi">
     </fragment>
-
+<!--
     <fragment
         android:id="@+id/showReviewFragment"
         android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ShowReviewFragment"
@@ -80,9 +73,11 @@
         android:name="com.example.aliantebadge.home.menu_items.EnableAdminFragment"
         android:label="Admin mode">
     </fragment>
+
+-->
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.example.aliantebadge.home.menu_items.setting.SettingFragment"
+        android:name="com.example.aliantebadge.home.menu_item.setting.SettingFragment"
         android:label="Settings">
         <action
             android:id="@+id/action_settingFragment_to_versionAppFragment"
@@ -90,52 +85,34 @@
         <action
             android:id="@+id/action_settingFragment_to_themeFragment"
             app:destination="@id/themeFragment" />
-        <action
+        <!--<action
             android:id="@+id/action_settingFragment_to_reviewFragment"
-            app:destination="@id/reviewFragment" />
+            app:destination="@id/reviewFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/versionAppFragment"
-        android:name="com.example.aliantebadge.home.menu_items.setting.item_setting.VersionAppFragment"
+        android:name="com.example.aliantebadge.home.menu_item.setting.item_setting.VersionAppFragment"
         android:label="Version app">
     </fragment>
-    <fragment
-        android:id="@+id/prenoteFragment"
-        android:name="com.example.aliantebadge.home.PrenoteFragment"
-        android:label="Prenota da GR Barber">
-    </fragment>
-    <fragment
-    android:id="@+id/clientViewFragment"
-    android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ClientViewFragment"
-    android:label="I tuoi clienti">
-</fragment>
 
-    <fragment
-        android:id="@+id/acceptFragment"
-        android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ManageClientFragment"
-        android:label="Accetta nuovi clienti">
-    </fragment>
-    <fragment
-        android:id="@+id/reservationFragment"
-        android:name="com.example.aliantebadge.home.menu_items.MyPrenotationFragment"
-        android:label="Gestisci le tue prenotazioni">
-    </fragment>
-    <fragment
-    android:id="@+id/allReservationFragment"
-    android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.OtherPrenotationFragment"
-    android:label="Gestisci tutte le prenotazioni">
-</fragment>
-    <fragment
-        android:id="@+id/changePasswordFragment"
-        android:name="com.example.aliantebadge.home.menu_items.profile.ChangePasswordFragment"
-        android:label="@string/nav_change_password" />
-    <fragment
-        android:id="@+id/editProfileFragment"
-        android:name="com.example.aliantebadge.home.menu_items.profile.EditProfileFragment"
-        android:label="@string/nav_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" >
+    <!--
+      <fragment
+      android:id="@+id/clientViewFragment"
+      android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ClientViewFragment"
+      android:label="I tuoi clienti">
+  </fragment>
 
-    </fragment>
+      <fragment
+          android:id="@+id/changePasswordFragment"
+          android:name="com.example.aliantebadge.home.menu_items.profile.ChangePasswordFragment"
+          android:label="@string/nav_change_password" />
+      <fragment
+          android:id="@+id/editProfileFragment"
+          android:name="com.example.aliantebadge.home.menu_items.profile.EditProfileFragment"
+          android:label="@string/nav_edit_profile"
+          tools:layout="@layout/fragment_edit_profile" >
+
+      </fragment>-->
 
 
 

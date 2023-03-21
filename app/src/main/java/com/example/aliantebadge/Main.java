@@ -83,9 +83,7 @@ public class Main extends AppCompatActivity {
 
         hamburgerMenu = navigationView.getMenu();
 
-        if(Variable.isVersionToUpdate()){
-            hamburgerMenu.setGroupVisible(R.id.appOption, false);
-        }
+
 
         if(currentUser!=null) {
             if (Variable.isAdmin(currentUser.getUid())) {
@@ -103,7 +101,7 @@ public class Main extends AppCompatActivity {
 
                 case R.id.itemEnableAdmin:
                     closeDrawerIfOpen();
-                    navController.navigate(R.id.enableAdminFragment);
+                   // navController.navigate(R.id.enableAdminFragment);
                     return true;
 
                 case R.id.itemSettings:
@@ -113,14 +111,7 @@ public class Main extends AppCompatActivity {
 
                 case R.id.itemAdmin:
                     closeDrawerIfOpen();
-                    navController.navigate(R.id.adminFragment);
-                    return true;
-
-
-
-                case R.id.itemProfile:
-                    closeDrawerIfOpen();
-                    navController.navigate(R.id.profileFragment);
+                    //navController.navigate(R.id.adminFragment);
                     return true;
 
                 case R.id.itemSignOut:
@@ -151,7 +142,7 @@ public class Main extends AppCompatActivity {
     public void setNotification() {
 
             getSupportActionBar().setHomeAsUpIndicator(setBadgeCount(this, R.drawable.ic_burger));
-            hamburgerMenu.getItem(2).setIcon(setBadgeCount(this,R.drawable.ic_round_settings_24));
+            hamburgerMenu.getItem(0).setIcon(setBadgeCount(this,R.drawable.ic_round_settings_24));
 
     }
 
@@ -173,7 +164,7 @@ public class Main extends AppCompatActivity {
     private void createAppBar() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.homeFragment, R.id.profileFragment)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.homeFragment)//, R.id.profileFragment)
                 .setOpenableLayout(drawerLayout)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_main);
