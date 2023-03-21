@@ -30,7 +30,7 @@
             android:layout_marginTop="24dp"
             android:text="@string/dialog_button_text_confirm"
             android:textSize="20sp"
-            app:backgroundTint="@color/dark_blue"
+            app:backgroundTint="@color/dark_orange"
             app:cornerRadius="10dp" />
 
         <Button
@@ -40,10 +40,10 @@
             android:height="50dp"
             android:backgroundTint="@color/white"
             android:text="@string/dialog_button_text_cancel"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/dark_orange"
             android:textSize="20sp"
             app:cornerRadius="10dp"
-            app:strokeColor="@color/dark_blue"
+            app:strokeColor="@color/dark_orange"
             app:strokeWidth="2dp" />
 
     </LinearLayout>

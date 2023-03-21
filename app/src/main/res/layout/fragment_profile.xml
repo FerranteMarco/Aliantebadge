@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/text_change_profile"
                     android:padding="8dp"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/dark_orange"
                     android:background="?android:attr/selectableItemBackground"
                     android:clickable="true"
                     android:focusable="true"

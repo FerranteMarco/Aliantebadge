@@ -47,7 +47,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:text="@string/text_banner_home_hello"
-                        android:textColor="@color/dark_blue"
+                        android:textColor="@color/dark_orange"
                         android:textSize="@dimen/textsize_TitleLogin" />
 
                     <TextView
@@ -55,7 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/marginStart_location_home"
-                        android:textColor="@color/dark_blue"
+                        android:textColor="@color/dark_orange"
                         android:textSize="@dimen/textsize_TitleLogin" />
 
                 </LinearLayout>
@@ -82,15 +82,34 @@
                     android:paddingHorizontal="30dp"
                     android:paddingBottom="20dp"
                     android:text="Timbra il tuo badge toccando il pulsante sottostante"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/dark_orange"
                     android:textSize="22sp" />
+
+                <AnalogClock
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:dial="@drawable/clock"
+                    android:layout_marginVertical="30dp"
+                    android:hand_hourTint="@color/orange"
+                    android:hand_minuteTint="@color/light_orange"/>
+
+
+                <DigitalClock
+                    android:layout_marginBottom="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="30dp"
+                    android:typeface="monospace" />
 
                 <Button
                     android:id="@+id/buttonPrenota"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Avanti"
+                    android:text="Timbra"
                     android:visibility="visible" />
 
 
