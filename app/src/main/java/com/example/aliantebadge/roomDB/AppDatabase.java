@@ -17,8 +17,8 @@ import com.example.aliantebadge.roomDB.Entity.*;
  */
 @Database(entities = {
         User.class,
-        Booking.class
-}, version  = 5, exportSchema = false)
+        Badge.class
+}, version = 2, exportSchema = false)
 @TypeConverters(com.example.aliantebadge.roomDB.Converters.class)
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -26,7 +26,7 @@ public abstract class AppDatabase extends RoomDatabase {
      * Dichiarazione dei DAO (Data Access Object), ognuno associato ad ogni entità del DB
      */
     public abstract UserDao userDao();
-    public abstract BookingDao bookingDao();
+    public abstract BadgeDao badgeDao();
 
     private static AppDatabase INSTANCE;
 
