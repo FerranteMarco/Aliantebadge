@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
         db = AppDatabase.getDbInstance(requireActivity());
         mFirestore = FirebaseFirestore.getInstance();
 
+        locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
 
         if(Variable.isaBoolean(db.userDao().getCurrentUser().uid))
             Variable.setAdmin(true);
@@ -108,6 +109,8 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
+        checkLocationPermissionsEnabledThenAttachListener();
+
 
         TimeZone.setDefault(TimeZone.getTimeZone("Europe/Rome"));
 
@@ -146,7 +149,10 @@ public class HomeFragment extends Fragment {
 
 
         timbra.setOnClickListener(view12 -> {
+            //todo check permission
+            positionChanged();
 
+            
         });
 
        if(db.userDao().getCurrentUser() != null)
@@ -165,6 +171,19 @@ public class HomeFragment extends Fragment {
                 }
                 break;
             }
+        }
+    }
+
+    private void positionChanged() {
+        System.out.println("ci siamo eh ");
+        if(lastKnownLocation != null) {
+            String locality = PositionHelper.getLocality(getContext(), lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+            if(locality != null && !locality.equals("")) {
+                //textLocation.setVisibility(View.VISIBLE);
+                System.out.println("località " + locality);
+            }
+        }else{
+            //todo error
         }
     }
 
@@ -189,10 +208,10 @@ public class HomeFragment extends Fragment {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1 );
             }
         } else {
-          /*  textViewNearest.setVisibility(View.VISIBLE);
+          //  textViewNearest.setVisibility(View.VISIBLE);
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 20, listener);
             lastKnownLocation = PositionHelper.getLastKnownLocation(locationManager);
-            positionChanged();*/
+            //positionChanged();*/
         }
     }
 
