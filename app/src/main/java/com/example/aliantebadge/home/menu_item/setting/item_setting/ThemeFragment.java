@@ -41,7 +41,7 @@ public class ThemeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(true);
-        prefs = requireActivity().getSharedPreferences("gr_theme", Context.MODE_PRIVATE);
+        prefs = requireActivity().getSharedPreferences("aliante_theme", Context.MODE_PRIVATE);
         currentTheme = prefs.getInt("theme", -1);
     }
 

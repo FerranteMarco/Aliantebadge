@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="dark_orange">#eb8138</color>
-    <color name="orange">#ba5e1a</color>
-    <color name="light_orange">#cfa07d</color>
+    <color name="dark_orange">#ba5e1a</color>
+    <color name="orange">#eb8138</color>
+    <color name="light_orange">#eb8138</color>
     <color name="light_blue">#2331ff</color>
     <color name="teal">#18A3A2</color>
     <color name="red_wrong">#FF0000</color>

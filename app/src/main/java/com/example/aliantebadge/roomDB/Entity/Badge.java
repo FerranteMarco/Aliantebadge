@@ -1,5 +1,8 @@
 package com.example.aliantebadge.roomDB.Entity;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,9 +10,11 @@ import androidx.room.PrimaryKey;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Entity
-public class Badge {
+public class Badge{
 
         @PrimaryKey
         @NotNull
@@ -31,9 +36,8 @@ public class Badge {
         public String phoneModel;
 
         @ColumnInfo(name = "geo_location")
-        public ArrayList<Long> geo_location;
+        public ArrayList<Map<String, Double>> geo_location = new ArrayList<Map<String, Double>>();
 
-        @ColumnInfo(name = "geoTimes")
-        public ArrayList<Long> geoTimes;
 
-    }
+
+}
