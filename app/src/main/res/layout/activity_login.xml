@@ -9,7 +9,7 @@
     android:focusableInTouchMode="true">
 
 
-        <!-- Immagine del logo -->
+        <!-- Immagine del logo-->
         <ImageView
             android:id="@+id/imageViewHeaderTitle"
             android:layout_width="match_parent"

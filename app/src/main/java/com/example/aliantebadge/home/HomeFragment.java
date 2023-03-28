@@ -2,14 +2,19 @@ package com.example.aliantebadge.home;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioAttributes;
+import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,8 +27,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.aliantebadge.PositionHelper;
@@ -51,6 +59,11 @@ import java.util.TimeZone;
 public class HomeFragment extends Fragment {
 
     private AppDatabase db = null;
+
+    long minuts_between_misurations = 1;
+    NotificationCompat.Builder builder;
+    String id;
+    Timestamp timestamp;
     Date date = new Date();
     Date date2 = new Date();
     FirebaseFirestore mFirestore;
@@ -59,6 +72,15 @@ public class HomeFragment extends Fragment {
     LocationManager locationManager;
     Location lastKnownLocation;
     int buttonConta = 0;
+    Badge badge1;
+    Handler handler;
+    final Runnable r = new Runnable() {
+        @RequiresApi(api = Build.VERSION_CODES.P)
+        public void run() {
+            checkLocationPermissionsEnabledThenAttachListener();
+        }
+    };
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -114,10 +136,42 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        checkLocationPermissionsEnabledThenAttachListener();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Creazione del canale di notifica
+            String channelId = "my_channel_id";
+            CharSequence channelName = "My Channel";
+            String channelDescription = "My channel description";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel(channelId, channelName, importance);
+            channel.setDescription(channelDescription);
+
+            // Impostazione delle opzioni del canale
+            AudioAttributes attributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                    .build();
+            channel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), attributes);
+            channel.enableVibration(true);
+            channel.setLightColor(Color.RED);
+
+            // Registrazione del canale nel sistema di notifica
+            NotificationManager notificationManager = requireActivity().getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        builder = new NotificationCompat.Builder(requireActivity(), "my_channel_id")
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("Attenzione al GPS")
+                .setContentText("Sembra che il tuo GPS non sia attivo. attivalo per la rilevazione della posizione")
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
+
+
+// Invio della notifica
+
+        checkLocationPermissionsEnabled();
 
         TimeZone.setDefault(TimeZone.getTimeZone("Europe/Rome"));
 
@@ -153,30 +207,22 @@ public class HomeFragment extends Fragment {
             versionToUp.setVisibility(View.GONE);
 
 
-        Handler handler = new Handler();
-
-        final Runnable r = new Runnable() {
-            public void run() {
-                //todo aggiornare campo geo_locations
-                System.out.println("Hello World");
-                handler.postDelayed(this, 1000);
-            }
-        };
-
+        handler = new Handler();
 
         timbra.setOnClickListener(view12 -> {
 
             //todo aggiungere abilitazione automatica gps
-            timbra.setText("Timbra fine");
 
-            if(buttonConta == 0) {
-                handler.postDelayed(r, 10000);
-                buttonConta ++;
+            if((buttonConta % 2) == 0) {
 
-                registerBadge();
+                checkLocationPermissionsEnabledThenSaveOnDB();
             }
             else {
+                timbra.setText("Timbra inizio");
+                buttonConta ++;
+
                 handler.removeCallbacks(r);
+                mFirestore.collection("Badges").document(badge1.id_badge).update("fine",lastKnownLocation.getTime());
 
                 //todo fine registrazione
             }
@@ -189,11 +235,11 @@ public class HomeFragment extends Fragment {
 
     private void registerBadge() {
 
-        java.sql.Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        String id = Long.toString(timestamp.getTime());
+        timestamp = new Timestamp(System.currentTimeMillis());
+        id = Long.toString(timestamp.getTime());
         User currentUser = db.userDao().getCurrentUser();
 
-        Badge badge1 = new Badge();
+        badge1 = new Badge();
         badge1.id_badge = id;
         badge1.inizio = timestamp.getTime();
         badge1.fine = Long.valueOf(0);
@@ -204,15 +250,17 @@ public class HomeFragment extends Fragment {
         Map<String, Object> badge = new HashMap<>();
 
         if (lastKnownLocation != null) {
-            badge1.id_badge = String.valueOf(lastKnownLocation.getTime());
-            //badge1.inizio = lastKnownLocation.getTime();
+            //badge1.id_badge = String.valueOf(lastKnownLocation.getTime());
+            badge1.inizio = lastKnownLocation.getTime();
             Map<String, Double> position = new HashMap<>();
+            badge1.geo_location = new ArrayList<>();
             position.put("latidude", lastKnownLocation.getLatitude());
             position.put("longitude", lastKnownLocation.getLongitude());
             badge1.geo_location.add(position);
             badge.put("geo_location", badge1.geo_location);
         }
 
+        System.out.println("badge " + timestamp.getTime());
 
         badge.put("inizio", badge1.inizio);
         badge.put("fine", badge1.fine);
@@ -224,12 +272,33 @@ public class HomeFragment extends Fragment {
         mFirestore.collection("Badges").document(badge1.id_badge)
                 .set(badge)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @RequiresApi(api = Build.VERSION_CODES.P)
                     @Override
                     public void onSuccess(Void aVoid) {
 
                        db.badgeDao().insertBadge(badge1);
+                       if (locationManager.isLocationEnabled()) {
+                           locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
 
-                       // mNav.navigate(R.id.action_registerFragment_to_registerFeedbackFragment);
+                           timbra.setText("Timbra fine");
+
+                           buttonConta ++;
+
+                           handler.postDelayed(r, minuts_between_misurations * 1000 * 60);
+                       }else{
+                           AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+                           builder.setTitle(getText(R.string.pay_attention))
+                                   .setMessage(getText(R.string.request_position_dialog2))
+                                   .setCancelable(false)
+                                   .setPositiveButton(getText(R.string.ok), new DialogInterface.OnClickListener() {
+                                       public void onClick(DialogInterface dialog, int id) {
+                                           requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                                       }
+                                   })
+                                   .show();
+                       }
+
+                        // mNav.navigate(R.id.action_registerFragment_to_registerFeedbackFragment);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -245,6 +314,7 @@ public class HomeFragment extends Fragment {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -272,6 +342,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     private void checkLocationPermissionsEnabledThenAttachListener() {
 
         //controllo di non avere ancora i permessi
@@ -294,11 +365,108 @@ public class HomeFragment extends Fragment {
             }
         } else {
           //  textViewNearest.setVisibility(View.VISIBLE);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 20, listener);
-            lastKnownLocation = PositionHelper.getLastKnownLocation(locationManager);
-            //positionChanged();*/
+            Map<String, Double> position = new HashMap<>();
+            if(locationManager.isLocationEnabled()){
+                 lastKnownLocation = PositionHelper.getLastKnownLocation(locationManager);
+
+                if(lastKnownLocation != null) {
+                    position.put("latidude", lastKnownLocation.getLatitude());
+                    position.put("longitude", lastKnownLocation.getLongitude());
+
+                }else {
+                    int notificationId = 1;
+                    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(requireContext());
+                    notificationManager.notify(notificationId, builder.build());
+                }
+
+                badge1.geo_location.add(position);
+                mFirestore.collection("Badges").document(badge1.id_badge).update("geo_location", badge1.geo_location);
+
+                System.out.println("running runnable");
+                handler.postDelayed(r, minuts_between_misurations * 1000 * 60);
+            }else{
+                position.put("latidude", null);
+                position.put("longitude", null);
+
+                badge1.geo_location.add(position);
+                mFirestore.collection("Badges").document(badge1.id_badge).update("geo_location", badge1.geo_location);
+
+                int notificationId = 1;
+                
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(requireContext());
+                notificationManager.notify(notificationId, builder.build());
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+                builder.setTitle(getText(R.string.pay_attention))
+                        .setMessage(getText(R.string.request_position_dialog2))
+                        .setCancelable(false)
+                        .setPositiveButton(getText(R.string.ok), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                            }
+                        })
+                        .show();
+            }
         }
     }
+
+    private void checkLocationPermissionsEnabled() {
+
+        //controllo di non avere ancora i permessi
+        if(ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            //controllo che l'utente non me li abbia già negati precedentemente
+            if(ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+                builder.setTitle(getText(R.string.pay_attention))
+                        .setMessage(getText(R.string.request_position_dialog))
+                        .setCancelable(false)
+                        .setPositiveButton(getText(R.string.ok), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                            }
+                        })
+                        .show();
+            } else {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1 );
+            }
+        } else {
+            //  textViewNearest.setVisibility(View.VISIBLE);
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, minuts_between_misurations * 499 * 60, 1, listener);
+            lastKnownLocation = PositionHelper.getLastKnownLocation(locationManager);
+        }
+    }
+
+    private void checkLocationPermissionsEnabledThenSaveOnDB() {
+
+        //controllo di non avere ancora i permessi
+        if(ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            //controllo che l'utente non me li abbia già negati precedentemente
+            if(ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+                builder.setTitle(getText(R.string.pay_attention))
+                        .setMessage(getText(R.string.request_position_dialog))
+                        .setCancelable(false)
+                        .setPositiveButton(getText(R.string.ok), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                            }
+                        })
+                        .show();
+            } else {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1 );
+            }
+        } else {
+            //  textViewNearest.setVisibility(View.VISIBLE);
+           // locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, minuts_between_misurations * 499 * 60, 1, listener);
+            lastKnownLocation = PositionHelper.getLastKnownLocation(locationManager);
+            registerBadge();
+        }
+    }
+
 
     @Override
     public void onDestroy() {

@@ -178,6 +178,8 @@
     <!-- Strings related to authorization require -->
     <string name="request_position_dialog">Abbiamo bisogno di accedere alla tua posizione per migliorare il nostro servizio.</string>
 
+    <string name="request_position_dialog2">Abbiamo bisogno di accedere alla tua posizione per migliorare il nostro servizio. Attiva il GPS</string>
+
     <!-- Strings related to lost connection -->
     <string name="text_title_no_internet">Sei offline</string>
     <string name="text_subtitle_no_internet">Controlla la tua connessione</string>

@@ -124,6 +124,7 @@ public class Splash extends AppCompatActivity {
     private void updateLocalDB() {
 
         db.userDao().deleteAll();
+        db.badgeDao().deleteAll();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null)
             updateUser();
