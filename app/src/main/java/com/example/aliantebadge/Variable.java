@@ -2,8 +2,8 @@ package com.example.aliantebadge;
 
 
 public class Variable {
-    public static String giuseppe_uid = "WMteJAS3jZW3TsCaLsErHKpCo6u2";
-    public static String marco_uid = "bJhlH7o2ZpfZJyx7dA0browV2uo2";
+    public static String vanessa_uid = "";
+    public static String marco_uid = "pgUSCyptnqhTjndjcCuPLKjuYoC2";
     public static int dayInMilli = 86400000;
 
     private static boolean versionToUpdate;
@@ -21,11 +21,11 @@ public class Variable {
 
     public static boolean isAdmin(String currentUserLocalDB) {
 
-        return (currentUserLocalDB.equals(giuseppe_uid) || currentUserLocalDB.equals(marco_uid)) && getAdmin();
+        return (currentUserLocalDB.equals(vanessa_uid) || currentUserLocalDB.equals(marco_uid)) && getAdmin();
     }
 
     public static boolean isaBoolean(String currentUserLocalDB) {
-        return currentUserLocalDB.equals(giuseppe_uid);
+        return currentUserLocalDB.equals(vanessa_uid);
     }
 
     public static boolean isOwner(String currentUserLocalDB) {

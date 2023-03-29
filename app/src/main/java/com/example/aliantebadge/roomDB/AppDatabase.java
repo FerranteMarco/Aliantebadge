@@ -17,7 +17,8 @@ import com.example.aliantebadge.roomDB.Entity.*;
  */
 @Database(entities = {
         User.class,
-        Badge.class
+        Badge.class,
+        OtherUser.class
 }, version = 2, exportSchema = false)
 @TypeConverters(com.example.aliantebadge.roomDB.Converters.class)
 public abstract class AppDatabase extends RoomDatabase {
@@ -27,13 +28,14 @@ public abstract class AppDatabase extends RoomDatabase {
      */
     public abstract UserDao userDao();
     public abstract BadgeDao badgeDao();
+    public abstract OtherUserDao otherUserDao();
 
     private static AppDatabase INSTANCE;
 
     public static AppDatabase getDbInstance(Context context) {
         // Crezione del DB
         if(INSTANCE == null) {
-            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "GRBarber_DB")
+            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "AlianteBadge_DB")
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()   // permette a Room di distruggere e ricreare il DB a seguito di un upgrade di versione
                     .build();

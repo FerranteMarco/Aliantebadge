@@ -34,9 +34,9 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home" >
     </fragment>
-   <!-- <fragment
+    <fragment
         android:id="@+id/adminFragment"
-        android:name="com.example.aliantebadge.home.menu_items.admin.AdminFragment"
+        android:name="com.example.aliantebadge.home.menu_item.admin.AdminFragment"
         android:label="Admin">
         <action
             android:id="@+id/action_adminFragment_to_acceptFragment"
@@ -48,7 +48,7 @@
         <action
             android:id="@+id/action_adminFragment_to_showReviewFragment"
             app:destination="@id/showReviewFragment" />
-    </fragment>-->
+    </fragment>
 
     <fragment
         android:id="@+id/themeFragment"
