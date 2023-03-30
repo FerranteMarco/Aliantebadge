@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aliantebadge.R;
-import com.example.aliantebadge.home.card.CardClientView;
+import com.example.aliantebadge.home.card.CardAllEmployee;
 import com.example.aliantebadge.roomDB.AppDatabase;
 import com.example.aliantebadge.roomDB.Entity.OtherUser;
 import com.example.aliantebadge.upload.UploadData;
@@ -23,11 +23,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
-public class ClientViewFragment extends Fragment {
+public class EmployeeViewFragment extends Fragment {
     private AppDatabase db = null;
     List<OtherUser> users;
     private NavController mNav;
-    RecyclerView recyclerViewReservation;
+    RecyclerView recyclerViewEmployee;
 
 
     @Override
@@ -40,7 +40,7 @@ public class ClientViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_manage_client, container, false);
+        return inflater.inflate(R.layout.fragment_view_employee, container, false);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class ClientViewFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mNav = Navigation.findNavController(view);
-        recyclerViewReservation = view.findViewById(R.id.reservationCardRecyclerView);
+        recyclerViewEmployee = view.findViewById(R.id.allEmployeeCardRecyclerView);
 
 
     }
@@ -65,10 +65,8 @@ public class ClientViewFragment extends Fragment {
             } else {
                 UploadData.dialogError(requireActivity(), getText(R.string.an_error_occurred));
             }
+            db.otherUserDao().deleteByUserId(db.userDao().getCurrentUser().uid);
             users = db.otherUserDao().getAllUsers();
-            OtherUser current = new OtherUser(db.userDao().getCurrentUser());
-
-            users.remove(current);
 
             sortUsers();
         });
@@ -84,11 +82,12 @@ public class ClientViewFragment extends Fragment {
                 });
             }
 
-            CardClientView cardClient = new CardClientView(getContext(), users, getActivity());
+            CardAllEmployee cardClient = new CardAllEmployee(getContext(), users, getActivity());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
-            recyclerViewReservation.setLayoutManager(linearLayoutManager);
-            recyclerViewReservation.setAdapter(cardClient);
+            recyclerViewEmployee.setLayoutManager(linearLayoutManager);
+            recyclerViewEmployee.setAdapter(cardClient);
+
 
         }
     }

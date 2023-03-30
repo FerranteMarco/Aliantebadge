@@ -2,7 +2,7 @@ package com.example.aliantebadge;
 
 
 public class Variable {
-    public static String vanessa_uid = "";
+    public static String vanessa_uid = "JZhwkfcfhBTrBn2GO064FnU7WE12";
     public static String marco_uid = "pgUSCyptnqhTjndjcCuPLKjuYoC2";
     public static int dayInMilli = 86400000;
 

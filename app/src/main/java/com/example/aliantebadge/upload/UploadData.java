@@ -35,7 +35,7 @@ public class UploadData {
             user.uid = documentId;
             user.firstName = (String) documentData.get("first_name");
             user.secondName = (String) documentData.get("second_name");
-            user.accepted = (boolean) documentData.get("accepted");
+            user.phoneModel = (String) documentData.get("phoneModel");
             user.email = (String) documentData.get("email");
             user.versionApp = (String) documentData.get("versionApp");
             db.otherUserDao().insertUser(user);

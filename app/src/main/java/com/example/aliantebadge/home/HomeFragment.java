@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         db = AppDatabase.getDbInstance(requireActivity());
         mFirestore = FirebaseFirestore.getInstance();
-
+//todo permessi scaricare aggiornmento
         locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
 
         if(Variable.isaBoolean(db.userDao().getCurrentUser().uid))

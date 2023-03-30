@@ -28,8 +28,8 @@ public class OtherUser implements Comparable<OtherUser> {
     @ColumnInfo(name = "email")
     public String email;
 
-    @ColumnInfo(name = "accepted")
-    public boolean accepted;
+    @ColumnInfo(name = "phoneModel")
+    public String phoneModel;
 
     @ColumnInfo(name = "versionApp")
     public String versionApp ;

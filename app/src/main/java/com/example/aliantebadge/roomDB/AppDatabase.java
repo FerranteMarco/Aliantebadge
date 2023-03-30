@@ -19,7 +19,7 @@ import com.example.aliantebadge.roomDB.Entity.*;
         User.class,
         Badge.class,
         OtherUser.class
-}, version = 2, exportSchema = false)
+}, version = 3, exportSchema = false)
 @TypeConverters(com.example.aliantebadge.roomDB.Converters.class)
 public abstract class AppDatabase extends RoomDatabase {
 

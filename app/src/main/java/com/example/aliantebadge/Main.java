@@ -111,7 +111,7 @@ public class Main extends AppCompatActivity {
 
                 case R.id.itemAdmin:
                     closeDrawerIfOpen();
-                    //navController.navigate(R.id.adminFragment);
+                    navController.navigate(R.id.adminFragment);
                     return true;
 
                 case R.id.itemSignOut:

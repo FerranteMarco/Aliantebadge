@@ -22,4 +22,8 @@ public interface OtherUserDao {
 
     @Query("SELECT * FROM otheruser")
     List<OtherUser> getAllUsers();
+
+
+    @Query("DELETE FROM otheruser WHERE uid = :uid")
+    void deleteByUserId(String uid);
 }

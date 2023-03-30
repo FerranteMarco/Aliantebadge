@@ -39,15 +39,16 @@
         android:name="com.example.aliantebadge.home.menu_item.admin.AdminFragment"
         android:label="Admin">
         <action
-            android:id="@+id/action_adminFragment_to_acceptFragment"
-            app:destination="@id/acceptFragment" />
-        <action
             android:id="@+id/action_adminFragment_to_clientViewFragment"
             app:destination="@id/clientViewFragment" />
 
-        <action
-            android:id="@+id/action_adminFragment_to_showReviewFragment"
-            app:destination="@id/showReviewFragment" />
+        <!-- <action
+             android:id="@+id/action_adminFragment_to_acceptFragment"
+             app:destination="@id/acceptFragment" />
+
+         <action
+             android:id="@+id/action_adminFragment_to_showReviewFragment"
+             app:destination="@id/showReviewFragment" />-->
     </fragment>
 
     <fragment
@@ -95,24 +96,24 @@
         android:label="Version app">
     </fragment>
 
-    <!--
+
       <fragment
       android:id="@+id/clientViewFragment"
-      android:name="com.example.aliantebadge.home.menu_items.admin.item_admin.ClientViewFragment"
+      android:name="com.example.aliantebadge.home.menu_item.admin.item_admin.EmployeeViewFragment"
       android:label="I tuoi clienti">
   </fragment>
+    <!--
+         <fragment
+             android:id="@+id/changePasswordFragment"
+             android:name="com.example.aliantebadge.home.menu_items.profile.ChangePasswordFragment"
+             android:label="@string/nav_change_password" />
+         <fragment
+             android:id="@+id/editProfileFragment"
+             android:name="com.example.aliantebadge.home.menu_items.profile.EditProfileFragment"
+             android:label="@string/nav_edit_profile"
+             tools:layout="@layout/fragment_edit_profile" >
 
-      <fragment
-          android:id="@+id/changePasswordFragment"
-          android:name="com.example.aliantebadge.home.menu_items.profile.ChangePasswordFragment"
-          android:label="@string/nav_change_password" />
-      <fragment
-          android:id="@+id/editProfileFragment"
-          android:name="com.example.aliantebadge.home.menu_items.profile.EditProfileFragment"
-          android:label="@string/nav_edit_profile"
-          tools:layout="@layout/fragment_edit_profile" >
-
-      </fragment>-->
+         </fragment>-->
 
 
 

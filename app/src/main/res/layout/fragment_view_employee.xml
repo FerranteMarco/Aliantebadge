@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Clienti iscritti"
+            android:text="Dipendenti"
             android:gravity="center"
             android:textSize="26dp"
             android:textColor="@color/dark_orange"
@@ -28,7 +28,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/reservationCardRecyclerView"
+            android:id="@+id/allEmployeeCardRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

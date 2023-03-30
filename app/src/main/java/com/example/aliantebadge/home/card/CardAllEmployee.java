@@ -15,13 +15,13 @@ import com.example.aliantebadge.roomDB.Entity.OtherUser;
 
 import java.util.List;
 
-public class CardClientView extends RecyclerView.Adapter{
+public class CardAllEmployee extends RecyclerView.Adapter{
 
     Context ctx;
     List<OtherUser> users;
     private final FragmentActivity activity;
 
-    public CardClientView(Context ctx, List<OtherUser> users, FragmentActivity activity){
+    public CardAllEmployee(Context ctx, List<OtherUser> users, FragmentActivity activity){
         this.ctx = ctx;
         this.activity = activity;
         this.users = users;
@@ -31,7 +31,7 @@ public class CardClientView extends RecyclerView.Adapter{
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.card_view_client, parent, false );
+        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.card_all_employee, parent, false );
 
         return new ViewHolderClass(view);
     }
@@ -44,9 +44,8 @@ public class CardClientView extends RecyclerView.Adapter{
         viewHolderClass.name.setText(user.secondName +" " + user.firstName);
         viewHolderClass.email.setText(user.email);
         viewHolderClass.number.setText(String.valueOf(position+1));
-
-        if(user.versionApp != null)
-            viewHolderClass.versionClient.setText(user.versionApp);
+        viewHolderClass.phoneModel.setText(user.phoneModel);
+        viewHolderClass.versionClient.setText(user.versionApp);
 
 
     }
@@ -63,6 +62,7 @@ public class CardClientView extends RecyclerView.Adapter{
         TextView name;
         TextView email;
         TextView number;
+        TextView phoneModel;
         TextView versionClient;
 
         public ViewHolderClass(@NonNull View view) {
@@ -72,6 +72,7 @@ public class CardClientView extends RecyclerView.Adapter{
             name = view.findViewById(R.id.nameClient);
             number = view.findViewById(R.id.numberClient);
             email = view.findViewById(R.id.emailClient);
+            phoneModel = view.findViewById(R.id.phoneModel);
             versionClient = view.findViewById(R.id.versionClient);
         }
     }
